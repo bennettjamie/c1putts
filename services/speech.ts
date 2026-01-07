@@ -67,18 +67,39 @@ class SpeechService {
         await this.speak(`Session complete! You made ${makes} of ${total} putts. That's ${percent} percent!`);
     }
 
-    async playWhoosh(): Promise<void> {
-        // Placeholder - would be actual whoosh sound
-        // For now, silent or very quick sound
-        console.log('🎵 Whoosh!');
+    // Audio feedback using voice
+    async playChainsMake(): Promise<void> {
+        await this.speak('Chains... make!', { pitch: 1.2 });
     }
 
+    async playChainsMiss(): Promise<void> {
+        await this.speak('Chains... miss', { pitch: 0.9 });
+    }
+
+    async playClankTopBand(): Promise<void> {
+        await this.speak('Clang top band', { pitch: 0.8 });
+    }
+
+    async playClankBasket(): Promise<void> {
+        await this.speak('Clang basket', { pitch: 0.7 });
+    }
+
+    async playAirBall(): Promise<void> {
+        await this.speak('Air ball', { pitch: 0.6 });
+    }
+
+    // Legacy aliases (for existing code)
     async playChains(): Promise<void> {
-        await this.speak('Chains!', { pitch: 1.3 });
+        await this.playChainsMake();
     }
 
     async playClank(): Promise<void> {
-        await this.speak('Clank', { pitch: 0.7 });
+        await this.playChainsMiss();
+    }
+
+    async playWhoosh(): Promise<void> {
+        // Silent for now - could add "whoosh" voice if wanted
+        console.log('🎵 Throw detected');
     }
 
     async announceDistance(distance: number): Promise<void> {
