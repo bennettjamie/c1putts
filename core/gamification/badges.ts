@@ -58,7 +58,7 @@ export const CONTRIBUTION_BADGES: Badge[] = [
     },
 ];
 
-// Circle of Confidence Badges (from Product Plan)
+// Circle of Confidence Badges (C1 = 33ft, C2 = 66ft)
 export const COC_BADGES: Badge[] = [
     { id: 'coc_6', name: 'Baby Chains', emoji: '👶', description: 'CoC at 6 ft', requirement: 6, tier: 'bronze' },
     { id: 'coc_8', name: "Lil' Tap-In", emoji: '🎯', description: 'CoC at 8 ft', requirement: 8, tier: 'bronze' },
@@ -72,10 +72,11 @@ export const COC_BADGES: Badge[] = [
     { id: 'coc_24', name: 'Nerves of Steel 24', emoji: '⚔️', description: 'CoC at 24 ft', requirement: 24, tier: 'gold' },
     { id: 'coc_26', name: 'Circle Assassin 26', emoji: '🥷', description: 'CoC at 26 ft', requirement: 26, tier: 'gold' },
     { id: 'coc_28', name: 'Chain Sniper 28', emoji: '🎯', description: 'CoC at 28 ft', requirement: 28, tier: 'gold' },
-    { id: 'coc_30', name: 'Circle 1 King', emoji: '👑', description: 'CoC at 30 ft (C1 edge)', requirement: 30, tier: 'diamond' },
-    { id: 'coc_35', name: 'Deep Circle 35', emoji: '🌊', description: 'CoC at 35 ft', requirement: 35, tier: 'diamond' },
-    { id: 'coc_40', name: 'Circle 2 Challenger', emoji: '🚀', description: 'CoC at 40 ft', requirement: 40, tier: 'diamond' },
-    { id: 'coc_50', name: 'Long-Bomb Legend', emoji: '💎', description: 'CoC at 50 ft', requirement: 50, tier: 'diamond' },
+    { id: 'coc_30', name: 'Edge Dweller 30', emoji: '⚡', description: 'CoC at 30 ft', requirement: 30, tier: 'gold' },
+    { id: 'coc_33', name: 'Circle 1 King', emoji: '👑', description: 'CoC at 33 ft (C1 edge)', requirement: 33, tier: 'diamond' },
+    { id: 'coc_40', name: 'Deep Circle 40', emoji: '🌊', description: 'CoC at 40 ft', requirement: 40, tier: 'diamond' },
+    { id: 'coc_50', name: 'Circle 2 Challenger', emoji: '🚀', description: 'CoC at 50 ft', requirement: 50, tier: 'diamond' },
+    { id: 'coc_66', name: 'Long-Bomb Legend', emoji: '💎', description: 'CoC at 66 ft (C2 edge)', requirement: 66, tier: 'diamond' },
 ];
 
 /**

@@ -67,6 +67,28 @@ class SpeechService {
         await this.speak(`Session complete! You made ${makes} of ${total} putts. That's ${percent} percent!`);
     }
 
+    async playWhoosh(): Promise<void> {
+        // Placeholder - would be actual whoosh sound
+        // For now, silent or very quick sound
+        console.log('🎵 Whoosh!');
+    }
+
+    async playChains(): Promise<void> {
+        await this.speak('Chains!', { pitch: 1.3 });
+    }
+
+    async playClank(): Promise<void> {
+        await this.speak('Clank', { pitch: 0.7 });
+    }
+
+    async announceDistance(distance: number): Promise<void> {
+        await this.speak(`Move to ${distance} feet!`, { rate: 0.9 });
+    }
+
+    async playReady(): Promise<void> {
+        await this.speak('Ready!', { pitch: 1.1 });
+    }
+
     stop(): void {
         Speech.stop();
         this.isSpeaking = false;

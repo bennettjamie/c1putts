@@ -28,9 +28,18 @@ export default function TabsLayout() {
             <Tabs.Screen
                 name="play"
                 options={{
-                    title: 'Practise',
+                    title: 'Practice',
                     tabBarIcon: ({ color, size }) => (
                         <MaterialCommunityIcons name="disc-player" size={size} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="stats"
+                options={{
+                    title: 'Stats',
+                    tabBarIcon: ({ color, size }) => (
+                        <MaterialCommunityIcons name="chart-line" size={size} color={color} />
                     ),
                 }}
             />

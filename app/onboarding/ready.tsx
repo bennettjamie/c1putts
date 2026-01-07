@@ -36,9 +36,9 @@ export default function ReadyScreen() {
         // Complete onboarding
         await onboardingManager.completeOnboarding();
 
-        // Navigate to main app after a moment
+        // Navigate to active session after a moment
         setTimeout(() => {
-            router.replace('/(tabs)');
+            router.replace('/session/active');
         }, 1500);
     };
 
