@@ -1,21 +1,47 @@
 import { Slot } from 'expo-router';
-import { PaperProvider, MD3DarkTheme } from 'react-native-paper';
+import { PaperProvider } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
+import { useCallback, useEffect, useState } from 'react';
+import { View } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+import {
+    useFonts,
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_700Bold,
+} from '@expo-google-fonts/inter';
+import {
+    JetBrainsMono_700Bold,
+} from '@expo-google-fonts/jetbrains-mono';
+import { theme } from '../core/theme';
 
-const theme = {
-    ...MD3DarkTheme,
-    colors: {
-        ...MD3DarkTheme.colors,
-        primary: '#4CAF50', // Disc Golf Green
-        secondary: '#8BC34A',
-    },
-};
+// Keep splash screen visible while loading fonts
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+    const [fontsLoaded] = useFonts({
+        'Inter-Regular': Inter_400Regular,
+        'Inter-Medium': Inter_500Medium,
+        'Inter-Bold': Inter_700Bold,
+        'JetBrainsMono-Bold': JetBrainsMono_700Bold,
+    });
+
+    const onLayoutRootView = useCallback(async () => {
+        if (fontsLoaded) {
+            await SplashScreen.hideAsync();
+        }
+    }, [fontsLoaded]);
+
+    if (!fontsLoaded) {
+        return null;
+    }
+
     return (
-        <PaperProvider theme={theme}>
-            <StatusBar style="light" />
-            <Slot />
-        </PaperProvider>
+        <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+            <PaperProvider theme={theme}>
+                <StatusBar style="light" />
+                <Slot />
+            </PaperProvider>
+        </View>
     );
 }

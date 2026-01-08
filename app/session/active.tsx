@@ -6,6 +6,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { speechService } from '../../services/speech';
 import { TRAINING_LADDER } from '../../core/utils/distance';
+import { colors } from '../../core/theme';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
@@ -313,12 +314,12 @@ const styles = StyleSheet.create({
     },
     distanceNumber: {
         fontSize: 36,
-        fontWeight: '800',
-        color: '#00ff88',
+        fontFamily: 'JetBrainsMono-Bold',
+        color: colors.brand,
     },
     distanceUnit: {
         fontSize: 16,
-        color: '#00ff88',
+        color: colors.brand,
         marginLeft: 4,
     },
     progressDots: {
@@ -332,7 +333,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(255,255,255,0.3)',
     },
     dotActive: {
-        backgroundColor: '#00ff88',
+        backgroundColor: colors.brand,
     },
     closeButton: {
         backgroundColor: 'rgba(0,0,0,0.6)',
@@ -364,12 +365,12 @@ const styles = StyleSheet.create({
         borderWidth: 2,
     },
     puttMake: {
-        backgroundColor: 'rgba(0,255,136,0.3)',
-        borderColor: '#00ff88',
+        backgroundColor: `${colors.success}30`,
+        borderColor: colors.success,
     },
     puttMiss: {
-        backgroundColor: 'rgba(255,107,107,0.3)',
-        borderColor: '#ff6b6b',
+        backgroundColor: `${colors.error}30`,
+        borderColor: colors.error,
     },
     puttPending: {
         backgroundColor: 'rgba(255,255,255,0.1)',
@@ -399,10 +400,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     makeButton: {
-        backgroundColor: '#00ff88',
+        backgroundColor: colors.success,
     },
     missButton: {
-        backgroundColor: '#ff6b6b',
+        backgroundColor: colors.error,
     },
     buttonEmoji: {
         fontSize: 36,

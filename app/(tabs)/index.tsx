@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { sessionStorage } from '../../core/sessions';
 import { playerDatabase } from '../../core/players';
+import { colors, spacing, borderRadius } from '../../core/theme';
 
 export default function Home() {
     const [stats, setStats] = useState({
@@ -167,47 +168,47 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#0f0f1a',
+        backgroundColor: colors.background,
     },
     content: {
-        padding: 24,
+        padding: spacing.lg,
     },
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 24,
+        marginBottom: spacing.lg,
     },
     greeting: {
         fontSize: 28,
-        fontWeight: 'bold',
-        color: 'white',
+        fontFamily: 'Inter-Bold',
+        color: colors.textPrimary,
     },
     cocBadge: {
-        backgroundColor: '#00ff8820',
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-        borderRadius: 20,
+        backgroundColor: `${colors.brand}20`,
+        paddingHorizontal: spacing.md,
+        paddingVertical: spacing.sm,
+        borderRadius: borderRadius.xl,
         alignItems: 'center',
     },
     cocValue: {
         fontSize: 18,
-        fontWeight: 'bold',
-        color: '#00ff88',
+        fontFamily: 'JetBrainsMono-Bold',
+        color: colors.brand,
     },
     cocLabel: {
         fontSize: 10,
-        color: '#00ff88',
+        color: colors.brand,
     },
 
     // Quick Start
     quickStart: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#00ff88',
-        borderRadius: 20,
-        padding: 20,
-        marginBottom: 20,
+        backgroundColor: colors.brand,
+        borderRadius: borderRadius.xl,
+        padding: spacing.lg,
+        marginBottom: spacing.lg,
     },
     quickStartIcon: {
         width: 60,
@@ -216,126 +217,126 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.2)',
         justifyContent: 'center',
         alignItems: 'center',
-        marginRight: 16,
+        marginRight: spacing.md,
     },
     quickStartText: {
         flex: 1,
     },
     quickStartTitle: {
         fontSize: 22,
-        fontWeight: 'bold',
-        color: '#0f0f1a',
+        fontFamily: 'Inter-Bold',
+        color: colors.textOnBrand,
     },
     quickStartSubtitle: {
         fontSize: 14,
-        color: '#0f0f1a',
+        color: colors.textOnBrand,
         opacity: 0.7,
     },
 
     // Challenge Row
     challengeRow: {
         flexDirection: 'row',
-        gap: 12,
-        marginBottom: 24,
+        gap: spacing.sm,
+        marginBottom: spacing.lg,
     },
     challengeCard: {
         flex: 1,
-        backgroundColor: '#1a1a2e',
-        borderRadius: 16,
-        padding: 16,
+        backgroundColor: colors.surfaceSolid,
+        borderRadius: borderRadius.lg,
+        padding: spacing.md,
         alignItems: 'center',
     },
     challengeEmoji: {
         fontSize: 28,
-        marginBottom: 8,
+        marginBottom: spacing.sm,
     },
     challengeTitle: {
         fontSize: 14,
-        fontWeight: 'bold',
-        color: 'white',
+        fontFamily: 'Inter-Bold',
+        color: colors.textPrimary,
     },
     challengeSubtitle: {
         fontSize: 11,
-        color: '#888',
+        color: colors.textMuted,
     },
 
     // Stats
     statsRow: {
         flexDirection: 'row',
-        gap: 12,
-        marginBottom: 24,
+        gap: spacing.sm,
+        marginBottom: spacing.lg,
     },
     statBox: {
         flex: 1,
-        backgroundColor: '#1a1a2e',
-        borderRadius: 12,
-        padding: 16,
+        backgroundColor: colors.surfaceSolid,
+        borderRadius: borderRadius.md,
+        padding: spacing.md,
         alignItems: 'center',
     },
     statValue: {
         fontSize: 20,
-        fontWeight: 'bold',
-        color: 'white',
+        fontFamily: 'JetBrainsMono-Bold',
+        color: colors.textPrimary,
     },
     statLabel: {
         fontSize: 11,
-        color: '#888',
-        marginTop: 4,
+        color: colors.textMuted,
+        marginTop: spacing.xs,
     },
 
     // Sessions
     sectionTitle: {
         fontSize: 16,
-        fontWeight: '600',
-        color: 'white',
-        marginBottom: 12,
+        fontFamily: 'Inter-Bold',
+        color: colors.textPrimary,
+        marginBottom: spacing.sm,
     },
     sessionCard: {
-        backgroundColor: '#1a1a2e',
-        marginBottom: 8,
-        borderRadius: 12,
+        backgroundColor: colors.surfaceSolid,
+        marginBottom: spacing.sm,
+        borderRadius: borderRadius.md,
     },
     sessionRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 16,
+        padding: spacing.md,
     },
     sessionType: {
         fontSize: 14,
-        fontWeight: '600',
-        color: 'white',
+        fontFamily: 'Inter-Bold',
+        color: colors.textPrimary,
     },
     sessionDate: {
         fontSize: 12,
-        color: '#888',
+        color: colors.textMuted,
     },
     sessionStats: {
         alignItems: 'flex-end',
     },
     sessionPct: {
         fontSize: 18,
-        fontWeight: 'bold',
-        color: '#00ff88',
+        fontFamily: 'JetBrainsMono-Bold',
+        color: colors.success,
     },
     sessionPutts: {
         fontSize: 11,
-        color: '#888',
+        color: colors.textMuted,
     },
 
     // Training tip
     trainingTip: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#f59e0b15',
-        padding: 14,
-        borderRadius: 12,
-        marginTop: 16,
-        gap: 10,
+        backgroundColor: `${colors.warning}15`,
+        padding: spacing.md,
+        borderRadius: borderRadius.md,
+        marginTop: spacing.md,
+        gap: spacing.sm,
     },
     tipText: {
         flex: 1,
         fontSize: 13,
-        color: '#f59e0b',
+        color: colors.warning,
     },
 });
